@@ -24,8 +24,8 @@
     </div>
 
     <div class="flex justify-end">
-      <a href="<?= base_url('kelola-media') ?>" class="mr-4 text-gray-600 hover:underline">Kembali</a>
-      <button type="submit" class="bg-[#7AA095] hover:bg-green-600 text-white px-5 py-2 rounded">
+      <a href="<?= base_url('kelola-media') ?>" class="mr-4 text-gray-600 hover:none bg-[#7AA095] hover:bg-[#5a7a70] text-white px-5 py-2 rounded-lg">Kembali</a>
+      <button type="submit" class="bg-[#7AA095] hover:none bg-[#7AA095] hover:bg-[#5a7a70] text-white px-5 py-2 rounded-lg">
         Unggah
       </button>
     </div>

@@ -5,9 +5,22 @@
 <div class="bg-white p-6 rounded-lg shadow-md">
   <h2 class="text-2xl font-bold text-gray-800 mb-4">Kelola Berita</h2>
 
+  <?php if (session()->getFlashdata('success')) : ?>
+    <div class="alert bg-green-100 border border-green-300 text-green-800 px-4 py-3 rounded relative mb-4 shadow-md transition-opacity duration-500 ease-in-out">
+      <strong>Sukses!</strong> <?= session()->getFlashdata('success') ?>
+    </div>
+  <?php endif; ?>
+
+  <?php if (session()->getFlashdata('error')) : ?>
+    <div class="alert bg-red-100 border border-red-300 text-red-800 px-4 py-3 rounded relative mb-4 shadow-md transition-opacity duration-500 ease-in-out">
+      <strong>Gagal!</strong> <?= session()->getFlashdata('error') ?>
+    </div>
+  <?php endif; ?>
+
+
   <!-- Tombol Tambah Berita & Pencarian -->
   <div class="flex justify-between items-center mb-4">
-    <a href="<?= base_url('tambah-edit-berita') ?>" class="bg-[#7AA095] text-white px-4 py-2 rounded-lg hover:bg-[#5a7a70]">
+    <a href="<?= base_url('berita/tambah') ?>" class="bg-[#7AA095] text-white px-4 py-2 rounded-lg hover:bg-[#5a7a70]">
       <i class="fas fa-plus mr-2"></i> Tambah Berita
     </a>
 
@@ -18,7 +31,7 @@
 
   <!-- Tabel Daftar Berita -->
   <div class="overflow-x-auto">
-    <table class="w-full border-collapse bg-gray-100">
+    <table class="w-full border-collapse [&>*>*>*]:border border border-gray-300 bg-gray-100">
       <thead class="bg-[#7AA095] text-white">
         <tr>
           <th class="p-3 text-left">No</th>
@@ -32,27 +45,28 @@
       <tbody>
         <?php if (empty($berita)) : ?>
           <tr>
-            <td colspan="6" class="text-center text-gray-500 py-4">Belum ada berita diunggah.</td>
+            <td colspan="6" class="text-center text-gray-500 py-4">Belum ada berita.</td>
           </tr>
         <?php else : ?>
-          <?php $no = 1; foreach ($berita as $b) : ?>
+          <?php $no = 1;
+          foreach ($berita as $b) : ?>
             <tr class="border-b">
-              <td class="p-3"><?= $no++ ?></td>
-              <td class="p-3">
-                <img src="<?= base_url('uploads/' . $b['gambar']) ?>" alt="Gambar" class="w-16 h-16 rounded-lg">
-              </td>
+              <td class="p-3 text-center"><?= $no++ ?></td>
+              <td class="p-3"><img src="<?= base_url('uploads/' . $b['gambar']) ?>" alt="Gambar" class="w-16 h-16 rounded-lg"></td>
               <td class="p-3"><?= esc($b['judul']) ?></td>
               <td class="p-3 truncate max-w-xs"><?= esc(substr($b['isi'], 0, 50)) ?>...</td>
               <td class="p-3"><?= date('d-m-Y', strtotime($b['tanggal'])) ?></td>
-              <td class="p-3 flex justify-center space-x-2">
-                <a href="<?= base_url('berita/edit/' . $b['id']) ?>" class="bg-yellow-500 text-white px-3 py-1 rounded-lg hover:bg-yellow-600">
-                  <i class="fas fa-edit"></i> Edit
-                </a>
-                <form action="<?= base_url('berita/hapus/' . $b['id']) ?>" method="post" onsubmit="return confirm('Yakin ingin menghapus berita ini?')">
-                  <button type="submit" class="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600">
-                    <i class="fas fa-trash"></i> Hapus
-                  </button>
-                </form>
+              <td class="p-3 text-center">
+                <div class="flex justify-center items-center space-x-2">
+                  <a href="<?= base_url('berita/edit/' . $b['id']) ?>" class="bg-yellow-500 text-white px-3 py-1 rounded-lg hover:bg-yellow-600">
+                    <i class="fas fa-edit"></i> Edit
+                  </a>
+                  <form action="<?= base_url('berita/hapus/' . $b['id']) ?>" method="post" onsubmit="return confirm('Hapus berita ini?')">
+                    <button type="submit" class="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600">
+                      <i class="fas fa-trash"></i> Hapus
+                    </button>
+                  </form>
+                </div>
               </td>
             </tr>
           <?php endforeach; ?>

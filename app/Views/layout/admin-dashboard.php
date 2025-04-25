@@ -77,9 +77,16 @@
     }
 
     updateDateTime();
-    setInterval(updateDateTime, 1000); // update setiap 1 detik
-  </script>
 
+    // Auto dismiss alert after 1.5s
+    window.setTimeout(function() {
+      document.querySelectorAll('.alert').forEach(function(el) {
+        el.style.transition = 'opacity 0.5s ease';
+        el.style.opacity = '0';
+        setTimeout(() => el.remove(), 500);
+      });
+    }, 3000);
+  </script>
 
 </body>
 

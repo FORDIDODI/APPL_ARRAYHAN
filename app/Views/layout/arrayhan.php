@@ -13,177 +13,206 @@
 
 <body class="bg-white transition-all duration-300">
   <!-- Popup Iklan -->
-<div id="popupIklan"
-  class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden transition-opacity duration-300">
-  
-  <div
-    class="bg-white rounded-2xl overflow-hidden shadow-2xl relative w-[90%] md:w-[500px] transform scale-95 transition-all duration-300 ease-out border border-gray-200">
+  <div id="popupIklan"
+    class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden transition-opacity duration-300">
 
-    <!-- Tombol Tutup -->
-    <button id="tutupPopup" aria-label="Tutup"
-      class="absolute top-3 right-3 text-red-500 hover:text-red-600 text-4xl font-bold transition duration-300 z-10 leading-none">
-      &times;
-    </button>
+    <div
+      class="bg-white rounded-2xl overflow-hidden shadow-2xl relative w-[90%] md:w-[500px] transform scale-95 transition-all duration-300 ease-out border border-gray-200">
 
-    <!-- Gambar Iklan -->
-    <img src="<?= base_url('assets/img/pendaftaran/pendaftaran-2025.jpg'); ?>" alt="Iklan"
-      class="w-full h-auto object-contain transition duration-300" />
-  </div>
-</div>
-
-  <!-- Mobile Menu Button (visible only on small screens) -->
-  <div class="md:hidden flex justify-between items-center py-3 px-6 bg-white shadow-md">
-    <div class="flex items-center">
-      <img src="<?= base_url('assets/img/tk-arrayhan.png'); ?>" alt="RA AR RAYHAN" class="w-10 h-10" />
-      <h1 class="ml-2 text-[#40531B] font-bold">RAUDHATUL ATHFAL AR RAYHAN</h1>
-    </div>
-    <button id="mobileMenuBtn" class="text-[#40531B] text-xl">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-
-  <!-- Mobile Menu (hidden by default) -->
-  <div id="mobileMenu" class="hidden md:hidden bg-white shadow-md px-6 py-4">
-    <div class="mb-4 relative">
-      <input type="text" id="mobileSearchInput"
-        class="w-full pl-4 pr-10 py-2 rounded-md text-[#40531B] bg-[#AFBC88] focus:outline-none placeholder-[#40531B] placeholder:font-bold"
-        placeholder="Cari" />
-      <button id="mobileSearchBtn" class="absolute right-3 top-2 text-[#40531B]">
-        <i class="fas fa-search"></i>
-      </button>
-      <!-- Mobile Search Results -->
-      <div id="mobileSearchResults" class="hidden absolute z-10 top-full left-0 right-0 mt-1 bg-white rounded-md shadow-lg max-h-64 overflow-y-auto">
-        <!-- Search results will be populated here -->
-      </div>
-    </div>
-
-    <div class="space-y-4">
-      <div>
-        <button class="w-full text-left font-bold text-[#40531B] py-2 flex justify-between items-center"
-          id="mobileTentangBtn">
-          Tentang <i class="fas fa-chevron-down"></i>
-        </button>
-        <ul id="mobileTentangMenu" class="hidden bg-gray-100 rounded-md mt-1 py-2">
-          <li><a href="<?= base_url('tentang') ?>" class="block px-4 py-2 hover:bg-[#AFBC88] rounded-md">Profil Yayasan</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-[#AFBC88] rounded-md">Visi & Misi</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-[#AFBC88] rounded-md">Sejarah</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-[#AFBC88] rounded-md">Struktur Organisasi</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-[#AFBC88] rounded-md">Penghargaan</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <button class="w-full text-left font-bold text-[#40531B] py-2 flex justify-between items-center"
-          id="mobileMediaBtn">
-          Media & Informasi <i class="fas fa-chevron-down"></i>
-        </button>
-        <ul id="mobileMediaMenu" class="hidden bg-gray-100 rounded-md mt-1 py-2">
-          <li><a href="#" class="block px-4 py-2 hover:bg-[#AFBC88] rounded-md"><i class="fas fa-newspaper mr-2"></i>
-              Berita & Pengumuman</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-[#AFBC88] rounded-md"><i class="fas fa-camera mr-2"></i>
-              Dokumentasi Kegiatan</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-[#AFBC88] rounded-md"><i class="fas fa-images mr-2"></i>
-              Galeri</a></li>
-        </ul>
-      </div>
-
-      <button onclick="window.open('https://api.whatsapp.com/send?phone=+6285297629760', '_blank')"
-        class="w-full bg-[#AFBC88] text-[#40531B] px-4 py-2 rounded-md flex items-center justify-center font-bold">
-        Kontak <i class="fas fa-phone-alt ml-2"></i>
+      <!-- Tombol Tutup -->
+      <button id="tutupPopup" aria-label="Tutup"
+        class="absolute top-3 right-3 text-red-500 hover:text-red-600 text-4xl font-bold transition duration-300 z-10 leading-none">
+        &times;
       </button>
 
+      <!-- Gambar Iklan -->
+      <img src="<?= base_url('assets/img/pendaftaran/pendaftaran-2025.jpg'); ?>" alt="Iklan"
+        class="w-full h-auto object-contain transition duration-300" />
+    </div>
+  </div>
 
-      <div class="flex justify-center">
-        <button id="mobileDarkModeToggle"
-          class="relative w-16 h-8 bg-[#AFBC88] rounded-full flex items-center transition-all duration-300">
-          <div id="mobileToggleCircle"
-            class="absolute left-1 w-6 h-6 bg-[#40531B] rounded-full flex items-center justify-center transition-all duration-300">
-            <i id="mobileToggleIcon" class="fas fa-sun text-white"></i>
+  <!-- NAVBAR START -->
+  <nav class="bg-white shadow-md w-full">
+    <!-- Desktop Navbar - hidden on mobile screens -->
+    <div class="hidden md:flex justify-between items-center py-3 px-6 container mx-auto">
+      <!-- Logo & Brand Name -->
+      <div class="flex items-center">
+        <img src="<?= base_url('assets/img/logo-tk.png'); ?>" alt="RA AR RAYHAN" class="w-12 h-12">
+        <div class="ml-3">
+          <h1 class="text-[#40531B] font-bold text-lg">RAUDHATUL ATHFAL</h1>
+          <h2 class="text-[#40531B] font-bold text-lg">AR-RAYHAN</h2>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="flex items-center space-x-8">
+        <a href="<?= base_url(); ?>" class="text-[#40531B] font-medium hover:text-[#AFBC88] transition-colors">Beranda</a>
+
+        <!-- Tentang Dropdown -->
+        <div class="relative group">
+          <button class="text-[#40531B] font-medium hover:text-[#AFBC88] transition-colors flex items-center">
+            Tentang
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute left-0 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+            <a href="<?= base_url('tentang'); ?>" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
+              <i class="fas fa-id-badge mr-2"></i> Profil Yayasan
+            </a>
+            <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
+              <i class="fas fa-bullseye mr-2"></i> Visi & Misi
+            </a>
+            <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
+              <i class="fas fa-history mr-2"></i> Sejarah
+            </a>
+            <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white whitespace-nowrap">
+              <i class="fas fa-sitemap mr-2"></i> Struktur Organisasi
+            </a>
+            <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
+              <i class="fas fa-award mr-2"></i> Penghargaan
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Media & Informasi Dropdown -->
+        <div class="relative group">
+          <button class="text-[#40531B] font-medium hover:text-[#AFBC88] transition-colors flex items-center">
+            Media & Informasi
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute left-0 min-w-[220px] bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+            <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white rounded-t-md whitespace-nowrap">
+              <i class="fas fa-newspaper mr-2"></i> Berita & Pengumuman
+            </a>
+            <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white whitespace-nowrap">
+              <i class="fas fa-camera mr-2"></i> Dokumentasi Kegiatan
+            </a>
+            <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white rounded-b-md whitespace-nowrap">
+              <i class="fas fa-images mr-2"></i> Galeri
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Search & Theme Toggle -->
+      <div class="flex items-center space-x-4">
+        <!-- Search Bar -->
+        <div class="relative">
+          <input type="text" placeholder="Cari" class="pl-4 pr-10 py-2 rounded-lg bg-[#C9D1A9] text-[#40531B] focus:outline-none placeholder-[#40531B]">
+          <button class="absolute right-3 top-2.5 text-[#40531B]">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+
+        <!-- Dark Mode Toggle -->
+        <button id="darkModeToggle" class="relative w-12 h-6 rounded-full bg-[#C9D1A9] flex items-center transition-colors">
+          <div id="themeCircle" class="absolute w-5 h-5 bg-[#40531B] rounded-full flex items-center justify-center transition-transform left-0.5">
+            <i id="themeIcon" class="fas fa-sun text-white text-xs"></i>
           </div>
         </button>
       </div>
     </div>
-  </div>
 
-  <!-- Desktop navbar (hidden on small screens) -->
-  <nav id="navbar"
-    class="hidden md:flex bg-white py-3 shadow-md items-center justify-between px-6 transition-all duration-300">
-    <div class="relative flex items-center space-x-6">
-      <div class="relative">
-        <input type="text" id="searchInput"
-          class="pl-4 pr-10 py-2 rounded-md text-[#40531B] bg-[#AFBC88] focus:outline-none placeholder-[#40531B] placeholder:font-bold"
-          placeholder="Cari" />
-        <button id="searchBtn" class="absolute right-3 top-2 text-[#40531B]">
-          <i class="fas fa-search"></i>
-        </button>
-        <!-- Desktop Search Results -->
-        <div id="searchResults" class="hidden absolute z-10 top-full left-0 right-0 mt-1 bg-white rounded-md shadow-lg max-h-64 overflow-y-auto w-full">
-          <!-- Search results will be populated here -->
+    <!-- Mobile Navbar -->
+    <div class="md:hidden flex justify-between items-center py-3 px-4">
+      <!-- Logo & Brand Name -->
+      <div class="flex items-center">
+        <img src="<?= base_url('assets/img/logo-tk.png'); ?>" alt="RA AR RAYHAN" class="w-10 h-10">
+        <div class="ml-2">
+          <h1 class="text-[#40531B] font-bold text-sm">RAUDHATUL ATHFAL</h1>
+          <h2 class="text-[#40531B] font-bold text-sm">AR-RAYHAN</h2>
         </div>
       </div>
-      <ul class="flex items-center space-x-6">
-        <li class="relative">
-          <button id="tentangButton" class="font-bold text-[#40531B] px-4 py-2 rounded-t-lg focus:outline-none">
-            Tentang
-          </button>
-          <ul id="tentangDropdown"
-            class="absolute hidden bg-[#40531B] text-white py-2 rounded-b-lg shadow-lg min-w-[200px] z-50 w-full">
-            <li>
-              <a href="<?= base_url('tentang') ?>" class="block px-4 py-2 hover:bg-[#AFBC88] rounded-md">Profil Yayasan</a>
-            </li>
-            <li>
-              <a href="#" class="block px-4 py-2 hover:bg-[#AFBC88] rounded-md">Visi & Misi</a>
-            </li>
-            <li>
-              <a href="#" class="block px-4 py-2 hover:bg-[#AFBC88] rounded-md">Sejarah</a>
-            </li>
-            <li>
-              <a href="#" class="block px-4 py-2 hover:bg-[#AFBC88] rounded-md">Struktur Organisasi</a>
-            </li>
-            <li>
-              <a href="#" class="block px-4 py-2 hover:bg-[#AFBC88] rounded-md">Penghargaan</a>
-            </li>
-          </ul>
+
+      <!-- Menu Button -->
+      <button id="mobileMenuBtn" class="text-[#40531B] text-xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white shadow-inner px-4 py-3">
+      <!-- Search Bar -->
+      <div class="mb-4 relative">
+        <input type="text" placeholder="Cari" class="w-full pl-4 pr-10 py-2 rounded-lg bg-[#C9D1A9] text-[#40531B] focus:outline-none placeholder-[#40531B]">
+        <button class="absolute right-3 top-2.5 text-[#40531B]">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="space-y-2">
+        <li>
+          <a href="<?= base_url(); ?>" class="block py-2 text-[#40531B] font-medium">Beranda</a>
         </li>
-        <li class="relative">
-          <button id="mediaButton" class="font-bold text-[#40531B] px-4 py-2 rounded-t-lg focus:outline-none">
-            Media & Informasi
-          </button>
-          <ul id="mediaDropdown"
-            class="absolute hidden bg-[#40531B] text-white py-2 rounded-b-lg shadow-lg min-w-[230px] z-50 w-full">
-            <li>
-              <a href="#" class="block px-4 py-2 hover:bg-[#AFBC88] rounded-md"><i class="fas fa-newspaper mr-2"></i>
-                Berita & Pengumuman</a>
-            </li>
-            <li>
-              <a href="#" class="block px-4 py-2 hover:bg-[#AFBC88] rounded-md"><i class="fas fa-camera mr-2"></i>
-                Dokumentasi Kegiatan</a>
-            </li>
-            <li>
-              <a href="#" class="block px-4 py-2 hover:bg-[#AFBC88] rounded-md"><i class="fas fa-images mr-2"></i>
-                Galeri</a>
-            </li>
-          </ul>
+
+        <!-- Tentang Dropdown -->
+        <li>
+          <div class="block">
+            <button id="mobileTentangBtn" class="flex items-center justify-between w-full py-2 text-[#40531B] font-medium">
+              Tentang
+              <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+            </button>
+            <div id="mobileTentangMenu" class="hidden bg-gray-100 rounded-md mt-1 py-1">
+              <a href="<?= base_url('tentang'); ?>" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
+                <i class="fas fa-id-badge mr-2"></i> Profil Yayasan
+              </a>
+              <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
+                <i class="fas fa-bullseye mr-2"></i> Visi & Misi
+              </a>
+              <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
+                <i class="fas fa-history mr-2"></i> Sejarah
+              </a>
+              <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
+                <i class="fas fa-sitemap mr-2"></i> Struktur Organisasi
+              </a>
+              <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
+                <i class="fas fa-award mr-2"></i> Penghargaan
+              </a>
+
+            </div>
+          </div>
+        </li>
+
+        <!-- Media & Informasi Dropdown -->
+        <li>
+          <div class="block">
+            <button id="mobileMediaBtn" class="flex items-center justify-between w-full py-2 text-[#40531B] font-medium">
+              Media & Informasi
+              <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+            </button>
+            <div id="mobileMediaMenu" class="hidden bg-gray-100 rounded-md mt-1 py-1">
+              <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
+                <i class="fas fa-newspaper mr-2"></i>Berita & Pengumuman
+              </a>
+              <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
+                <i class="fas fa-camera mr-2"></i>Dokumentasi Kegiatan
+              </a>
+              <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
+                <i class="fas fa-images mr-2"></i>Galeri
+              </a>
+            </div>
+          </div>
         </li>
       </ul>
-    </div>
-    <div class="flex space-x-3 items-center">
-      <button onclick="window.open('https://api.whatsapp.com/send?phone=+6285297629760', '_blank')"
-        class="bg-[#AFBC88] text-[#40531B] px-4 py-2 rounded-md flex items-center font-bold">
-        Kontak <i class="fas fa-phone-alt ml-2"></i>
-      </button>
-      <button id="darkModeToggle"
-        class="relative w-16 h-8 bg-[#AFBC88] rounded-full flex items-center transition-all duration-300">
-        <div id="toggleCircle"
-          class="absolute left-1 w-6 h-6 bg-[#40531B] rounded-full flex items-center justify-center transition-all duration-300">
-          <i id="toggleIcon" class="fas fa-sun text-white"></i>
-        </div>
-      </button>
+
+      <!-- Dark Mode Toggle -->
+      <div class="mt-4 flex justify-center">
+        <button id="mobileDarkModeToggle" class="relative w-12 h-6 rounded-full bg-[#C9D1A9] flex items-center transition-colors">
+          <div id="mobileThemeCircle" class="absolute w-5 h-5 bg-[#40531B] rounded-full flex items-center justify-center transition-transform left-0.5">
+            <i id="mobileThemeIcon" class="fas fa-sun text-white text-xs"></i>
+          </div>
+        </button>
+      </div>
     </div>
   </nav>
-  <!-- Penutup Navbar -->
+  <!-- NAVBAR END -->
 
-  <!-- Ini ada di dalam layout arrayhan.php -->
   <!-- KONTEN UTAMA -->
   <?= $this->renderSection('konten'); ?>
   <?= $this->renderSection('tentang'); ?>
@@ -192,6 +221,11 @@
   <?= $this->renderSection('galeri'); ?>
   <?= $this->renderSection('kontak'); ?>
 
+  <!-- Tombol WhatsApp Melayang -->
+  <button onclick="window.open('https://api.whatsapp.com/send?phone=+6285297629760', '_blank')"
+    class="fixed bottom-5 right-5 bg-[#AFBC88] text-[#40531B] px-4 py-2 rounded-full flex items-center font-bold shadow-lg hover:scale-105 transition-all z-50">
+    Hubungi Kami <i class="fas fa-phone-alt ml-2"></i>
+  </button>
   <!-- FOOTER -->
   <footer class="bg-[#AFBC88] py-8 mt-10">
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-6 md:px-10 gap-8">
@@ -239,23 +273,79 @@
     Copyright © 2025 - RA AR RAYHAN
   </div>
 
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script>
     // Sample search data - in a real implementation, this would come from your database
-    const searchData = [
-      { title: "Profil Yayasan", url: "<?= base_url('tentang') ?>", category: "Tentang" },
-      { title: "Visi & Misi", url: "#", category: "Tentang" },
-      { title: "Sejarah", url: "#", category: "Tentang" },
-      { title: "Struktur Organisasi", url: "#", category: "Tentang" },
-      { title: "Penghargaan", url: "#", category: "Tentang" },
-      { title: "Berita Terbaru", url: "#", category: "Media" },
-      { title: "Pengumuman PPDB 2025", url: "#", category: "Media" },
-      { title: "Kegiatan Hari Kartini", url: "#", category: "Media" },
-      { title: "Galeri Foto Wisuda", url: "#", category: "Media" },
-      { title: "Jadwal Pembelajaran", url: "#", category: "Akademik" },
-      { title: "Fasilitas Sekolah", url: "#", category: "Fasilitas" },
-      { title: "Program Unggulan", url: "#", category: "Program" },
-      { title: "Prestasi Siswa", url: "#", category: "Prestasi" },
-      { title: "Kontak Kami", url: "#", category: "Kontak" }
+    const searchData = [{
+        title: "Profil Yayasan",
+        url: "<?= base_url('tentang') ?>",
+        category: "Tentang"
+      },
+      {
+        title: "Visi & Misi",
+        url: "#",
+        category: "Tentang"
+      },
+      {
+        title: "Sejarah",
+        url: "#",
+        category: "Tentang"
+      },
+      {
+        title: "Struktur Organisasi",
+        url: "#",
+        category: "Tentang"
+      },
+      {
+        title: "Penghargaan",
+        url: "#",
+        category: "Tentang"
+      },
+      {
+        title: "Berita Terbaru",
+        url: "#",
+        category: "Media"
+      },
+      {
+        title: "Pengumuman PPDB 2025",
+        url: "#",
+        category: "Media"
+      },
+      {
+        title: "Kegiatan Hari Kartini",
+        url: "#",
+        category: "Media"
+      },
+      {
+        title: "Galeri Foto Wisuda",
+        url: "#",
+        category: "Media"
+      },
+      {
+        title: "Jadwal Pembelajaran",
+        url: "#",
+        category: "Akademik"
+      },
+      {
+        title: "Fasilitas Sekolah",
+        url: "#",
+        category: "Fasilitas"
+      },
+      {
+        title: "Program Unggulan",
+        url: "#",
+        category: "Program"
+      },
+      {
+        title: "Prestasi Siswa",
+        url: "#",
+        category: "Prestasi"
+      },
+      {
+        title: "Kontak Kami",
+        url: "#",
+        category: "Kontak"
+      }
     ];
 
     // Check localStorage for dark mode setting when the page loads
@@ -266,36 +356,67 @@
       } else {
         applyDarkMode(false);
       }
-      
-      // munculkan popup otomatis setelah 2 detik
+
+      // Show popup automatically after 2 seconds
       setTimeout(() => {
         const popup = document.getElementById('popupIklan');
         popup.classList.remove('hidden');
         popup.classList.add('opacity-100', 'scale-100');
       }, 2000);
 
+      // Mobile menu toggle
+      document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Mobile Tentang dropdown toggle
+      document.getElementById('mobileTentangBtn').addEventListener('click', function() {
+        const mobileTentangMenu = document.getElementById('mobileTentangMenu');
+        mobileTentangMenu.classList.toggle('hidden');
+
+        // Rotate arrow icon
+        const arrow = this.querySelector('.fa-chevron-down');
+        arrow.classList.toggle('rotate-180');
+      });
+
+      // Mobile Media & Informasi dropdown toggle
+      document.getElementById('mobileMediaBtn').addEventListener('click', function() {
+        const mobileMediaMenu = document.getElementById('mobileMediaMenu');
+        mobileMediaMenu.classList.toggle('hidden');
+
+        // Rotate arrow icon
+        const arrow = this.querySelector('.fa-chevron-down');
+        arrow.classList.toggle('rotate-180');
+      });
+
+      // Dark mode toggle functionality for desktop
+      document.getElementById('darkModeToggle').addEventListener('click', function() {
+        toggleDarkMode();
+      });
+
+      // Dark mode toggle functionality for mobile
+      document.getElementById('mobileDarkModeToggle').addEventListener('click', function() {
+        toggleDarkMode();
+      });
+
       // Set up search functionality for desktop
       const searchInput = document.getElementById('searchInput');
       const searchResults = document.getElementById('searchResults');
       const searchBtn = document.getElementById('searchBtn');
 
-      // Set up search functionality for mobile
-      const mobileSearchInput = document.getElementById('mobileSearchInput');
-      const mobileSearchResults = document.getElementById('mobileSearchResults');
-      const mobileSearchBtn = document.getElementById('mobileSearchBtn');
-
       // Function to handle search
       function performSearch(input, resultsContainer) {
         const query = input.value.toLowerCase().trim();
-        
+
         if (query.length < 2) {
           resultsContainer.classList.add('hidden');
           return;
         }
 
         // Filter search data based on query
-        const filteredResults = searchData.filter(item => 
-          item.title.toLowerCase().includes(query) || 
+        const filteredResults = searchData.filter(item =>
+          item.title.toLowerCase().includes(query) ||
           item.category.toLowerCase().includes(query)
         );
 
@@ -328,14 +449,14 @@
               const resultItem = document.createElement('a');
               resultItem.href = item.url;
               resultItem.className = 'block px-4 py-2 hover:bg-[#AFBC88] transition-colors duration-200';
-              
+
               // Highlight matching text
               const titleText = item.title;
               const highlightedTitle = titleText.replace(
                 new RegExp(query, 'gi'),
                 match => `<span class="bg-yellow-200">${match}</span>`
               );
-              
+
               resultItem.innerHTML = highlightedTitle;
               resultsContainer.appendChild(resultItem);
             });
@@ -345,142 +466,14 @@
         // Show results container
         resultsContainer.classList.remove('hidden');
       }
-
-      // Desktop search event listeners
-      searchInput.addEventListener('focus', () => {
-        if (searchInput.value.length >= 2) {
-          performSearch(searchInput, searchResults);
-        }
-      });
-
-      searchInput.addEventListener('input', () => {
-        performSearch(searchInput, searchResults);
-      });
-
-      searchBtn.addEventListener('click', () => {
-        performSearch(searchInput, searchResults);
-      });
-
-      // Mobile search event listeners
-      if (mobileSearchInput) {
-        mobileSearchInput.addEventListener('focus', () => {
-          if (mobileSearchInput.value.length >= 2) {
-            performSearch(mobileSearchInput, mobileSearchResults);
-          }
-        });
-
-        mobileSearchInput.addEventListener('input', () => {
-          performSearch(mobileSearchInput, mobileSearchResults);
-        });
-
-        mobileSearchBtn.addEventListener('click', () => {
-          performSearch(mobileSearchInput, mobileSearchResults);
-        });
-      }
-
-      // Close search results when clicking outside
-      document.addEventListener('click', (event) => {
-        if (!searchInput.contains(event.target) && !searchResults.contains(event.target)) {
-          searchResults.classList.add('hidden');
-        }
-        
-        if (mobileSearchInput && !mobileSearchInput.contains(event.target) && !mobileSearchResults.contains(event.target)) {
-          mobileSearchResults.classList.add('hidden');
-        }
-      });
-
-      // Handle Enter key press
-      searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-          performSearch(searchInput, searchResults);
-        }
-      });
-
-      if (mobileSearchInput) {
-        mobileSearchInput.addEventListener('keypress', (e) => {
-          if (e.key === 'Enter') {
-            performSearch(mobileSearchInput, mobileSearchResults);
-          }
-        });
-      }
     });
 
-    // Tombol tutup
+    // Tombol tutup popup
     document.getElementById('tutupPopup').addEventListener('click', () => {
       const popup = document.getElementById('popupIklan');
       popup.classList.add('hidden');
     });
 
-    // Toggle Mobile Menu
-    document.getElementById("mobileMenuBtn").addEventListener("click", function() {
-      document.getElementById("mobileMenu").classList.toggle("hidden");
-    });
-
-    // Mobile Tentang Dropdown
-    document.getElementById("mobileTentangBtn").addEventListener("click", function() {
-      document.getElementById("mobileTentangMenu").classList.toggle("hidden");
-    });
-
-    // Mobile Media Dropdown
-    document.getElementById("mobileMediaBtn").addEventListener("click", function() {
-      document.getElementById("mobileMediaMenu").classList.toggle("hidden");
-    });
-
-    // Mobile Dark Mode Toggle
-    document.getElementById("mobileDarkModeToggle").addEventListener("click", function() {
-      toggleDarkMode();
-    });
-
-    // Desktop Tentang Dropdown
-    document.getElementById("tentangButton").addEventListener("click", function(event) {
-      event.preventDefault();
-      let dropdown = document.getElementById("tentangDropdown");
-      let button = document.getElementById("tentangButton");
-      dropdown.classList.toggle("hidden");
-      if (!dropdown.classList.contains("hidden")) {
-        button.classList.add("bg-[#40531B]", "text-white");
-        button.classList.remove("text-[#40531B]");
-      } else {
-        button.classList.remove("bg-[#40531B]", "text-white");
-        button.classList.add("text-[#40531B]");
-      }
-    });
-
-    // Desktop Media Dropdown
-    document.getElementById("mediaButton").addEventListener("click", function(event) {
-      event.preventDefault();
-      let dropdown = document.getElementById("mediaDropdown");
-      let button = document.getElementById("mediaButton");
-      dropdown.classList.toggle("hidden");
-      if (!dropdown.classList.contains("hidden")) {
-        button.classList.add("bg-[#40531B]", "text-white");
-        button.classList.remove("text-[#40531B]");
-      } else {
-        button.classList.remove("bg-[#40531B]", "text-white");
-        button.classList.add("text-[#40531B]");
-      }
-    });
-
-    // Desktop Dark Mode Toggle
-    document.getElementById("darkModeToggle").addEventListener("click", function() {
-      toggleDarkMode();
-    });
-
-    // Common Dark Mode Function
-    function toggleDarkMode() {
-      // Check if darkMode is currently enabled
-      const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
-      
-      // Toggle the darkMode in localStorage
-      if (isDarkMode) {
-        localStorage.setItem('darkMode', 'disabled');
-        applyDarkMode(false);
-      } else {
-        localStorage.setItem('darkMode', 'enabled');
-        applyDarkMode(true);
-      }
-    }
-    
     // Update tanggal dan waktu dengan detik
     function updateDateTime() {
       const dateTimeElement = document.getElementById('dateTime');
@@ -497,92 +490,105 @@
     updateDateTime();
     setInterval(updateDateTime, 1000); // update setiap 1 detik
 
-    
+    // Common Dark Mode Function
+    function toggleDarkMode() {
+      // Check if darkMode is currently enabled
+      const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+
+      // Toggle the darkMode in localStorage
+      if (isDarkMode) {
+        localStorage.setItem('darkMode', 'disabled');
+        applyDarkMode(false);
+      } else {
+        localStorage.setItem('darkMode', 'enabled');
+        applyDarkMode(true);
+      }
+    }
+
     // Function to apply dark mode based on state
     function applyDarkMode(enable) {
       let body = document.body;
       let navbar = document.getElementById("navbar");
-      let toggleCircle = document.getElementById("toggleCircle");
-      let toggleIcon = document.getElementById("toggleIcon");
-      let mobileToggleCircle = document.getElementById("mobileToggleCircle");
-      let mobileToggleIcon = document.getElementById("mobileToggleIcon");
-      
+      let themeCircle = document.getElementById("themeCircle");
+      let themeIcon = document.getElementById("themeIcon");
+      let mobileThemeCircle = document.getElementById("mobileThemeCircle");
+      let mobileThemeIcon = document.getElementById("mobileThemeIcon");
+
       if (enable) {
         // Enable dark mode
         body.classList.add("bg-gray-900");
         body.classList.remove("bg-white");
-        
+
         // Also update search results appearance for dark mode
         const searchResults = document.getElementById('searchResults');
         const mobileSearchResults = document.getElementById('mobileSearchResults');
-        
+
         if (searchResults) {
           searchResults.classList.add('bg-gray-800', 'text-white');
           searchResults.classList.remove('bg-white');
         }
-        
+
         if (mobileSearchResults) {
           mobileSearchResults.classList.add('bg-gray-800', 'text-white');
           mobileSearchResults.classList.remove('bg-white');
         }
-        
-        if (toggleCircle) {
-          toggleCircle.classList.add("translate-x-8");
-          toggleIcon.classList.replace("fa-sun", "fa-moon");
+
+        if (themeCircle) {
+          themeCircle.classList.add("translate-x-6");
+          themeIcon.classList.replace("fa-sun", "fa-moon");
         }
-        if (mobileToggleCircle) {
-          mobileToggleCircle.classList.add("translate-x-8");
-          mobileToggleIcon.classList.replace("fa-sun", "fa-moon");
+        if (mobileThemeCircle) {
+          mobileThemeCircle.classList.add("translate-x-6");
+          mobileThemeIcon.classList.replace("fa-sun", "fa-moon");
         }
       } else {
         // Disable dark mode
         body.classList.remove("bg-gray-900");
         body.classList.add("bg-white");
-        
+
         // Update search results appearance for light mode
         const searchResults = document.getElementById('searchResults');
         const mobileSearchResults = document.getElementById('mobileSearchResults');
-        
+
         if (searchResults) {
           searchResults.classList.remove('bg-gray-800', 'text-white');
           searchResults.classList.add('bg-white');
         }
-        
+
         if (mobileSearchResults) {
           mobileSearchResults.classList.remove('bg-gray-800', 'text-white');
           mobileSearchResults.classList.add('bg-white');
         }
-        
-        if (toggleCircle) {
-          toggleCircle.classList.remove("translate-x-8");
-          toggleIcon.classList.replace("fa-moon", "fa-sun");
+
+        if (themeCircle) {
+          themeCircle.classList.remove("translate-x-6");
+          themeIcon.classList.replace("fa-moon", "fa-sun");
         }
-        if (mobileToggleCircle) {
-          mobileToggleCircle.classList.remove("translate-x-8");
-          mobileToggleIcon.classList.replace("fa-moon", "fa-sun");
+        if (mobileThemeCircle) {
+          mobileThemeCircle.classList.remove("translate-x-6");
+          mobileThemeIcon.classList.replace("fa-moon", "fa-sun");
         }
       }
     }
 
     // Close dropdowns when clicking outside
     document.addEventListener('click', function(event) {
-      const tentangButton = document.getElementById('tentangButton');
-      const mediaButton = document.getElementById('mediaButton');
-      const tentangDropdown = document.getElementById('tentangDropdown');
-      const mediaDropdown = document.getElementById('mediaDropdown');
+      // Close search results when clicking outside
+      const searchInput = document.getElementById('searchInput');
+      const searchResults = document.getElementById('searchResults');
 
-      if (tentangButton && !tentangButton.contains(event.target) && tentangDropdown && !tentangDropdown.contains(event.target)) {
-        tentangDropdown.classList.add('hidden');
-        tentangButton.classList.remove("bg-[#40531B]", "text-white");
-        tentangButton.classList.add("text-[#40531B]");
+      if (searchInput && searchResults && !searchInput.contains(event.target) && !searchResults.contains(event.target)) {
+        searchResults.classList.add('hidden');
       }
 
-      if (mediaButton && !mediaButton.contains(event.target) && mediaDropdown && !mediaDropdown.contains(event.target)) {
-        mediaDropdown.classList.add('hidden');
-        mediaButton.classList.remove("bg-[#40531B]", "text-white");
-        mediaButton.classList.add("text-[#40531B]");
+      const mobileSearchInput = document.getElementById('mobileSearchInput');
+      const mobileSearchResults = document.getElementById('mobileSearchResults');
+
+      if (mobileSearchInput && mobileSearchResults && !mobileSearchInput.contains(event.target) && !mobileSearchResults.contains(event.target)) {
+        mobileSearchResults.classList.add('hidden');
       }
     });
   </script>
 </body>
+
 </html>

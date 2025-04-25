@@ -3,17 +3,17 @@
 <?= $this->section('media'); ?>
 
 <div class="bg-white p-6 rounded-lg shadow-md">
-  <h2 class="text-2xl font-bold mb-4">Kelola Media</h2>
+  <h2 class="text-2xl font-bold text-gray-800 mb-4">Kelola Media</h2>
 
   <?php if (session()->getFlashdata('success')) : ?>
-    <div class="bg-green-100 text-green-700 p-3 rounded mb-4">
-      <?= session()->getFlashdata('success') ?>
+    <div class="alert bg-green-100 border border-green-300 text-green-800 px-4 py-3 rounded relative mb-4 shadow-md transition-opacity duration-500 ease-in-out">
+      <strong>Sukses!</strong> <?= session()->getFlashdata('success') ?>
     </div>
   <?php endif; ?>
 
   <?php if (session()->getFlashdata('error')) : ?>
-    <div class="bg-red-100 text-red-700 p-3 rounded mb-4">
-      <?= session()->getFlashdata('error') ?>
+    <div class="alert bg-red-100 border border-red-300 text-red-800 px-4 py-3 rounded relative mb-4 shadow-md transition-opacity duration-500 ease-in-out">
+      <strong>Gagal!</strong> <?= session()->getFlashdata('error') ?>
     </div>
   <?php endif; ?>
 
