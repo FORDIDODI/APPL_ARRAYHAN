@@ -50,14 +50,15 @@
 
         <!-- Tentang Dropdown -->
         <div class="relative group">
-          <button class="text-[#40531B] font-medium hover:text-[#AFBC88] transition-colors flex items-center">
+          <a href="<?= base_url('tentang'); ?>" class="text-[#40531B] font-medium hover:text-[#AFBC88] transition-colors flex items-center">
             Tentang
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
-          </button>
+          </a>
+
           <div class="absolute left-0 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-            <a href="<?= base_url('tentang'); ?>" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
+            <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
               <i class="fas fa-id-badge mr-2"></i> Profil Yayasan
             </a>
             <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
@@ -72,18 +73,18 @@
             <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
               <i class="fas fa-award mr-2"></i> Penghargaan
             </a>
-
           </div>
         </div>
 
+
         <!-- Media & Informasi Dropdown -->
         <div class="relative group">
-          <button class="text-[#40531B] font-medium hover:text-[#AFBC88] transition-colors flex items-center">
+          <a href="<?= base_url('media-informasi')?>" class="text-[#40531B] font-medium hover:text-[#AFBC88] transition-colors flex items-center">
             Media & Informasi
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
-          </button>
+          </a>
           <div class="absolute left-0 min-w-[220px] bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
             <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white rounded-t-md whitespace-nowrap">
               <i class="fas fa-newspaper mr-2"></i> Berita & Pengumuman
@@ -154,12 +155,12 @@
         <!-- Tentang Dropdown -->
         <li>
           <div class="block">
-            <button id="mobileTentangBtn" class="flex items-center justify-between w-full py-2 text-[#40531B] font-medium">
+            <a href="<?= base_url('tentang') ?>" id="mobileTentangBtn" class="flex items-center justify-between w-full py-2 text-[#40531B] font-medium">
               Tentang
               <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
-            </button>
+            </a>
             <div id="mobileTentangMenu" class="hidden bg-gray-100 rounded-md mt-1 py-1">
-              <a href="<?= base_url('tentang'); ?>" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
+              <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
                 <i class="fas fa-id-badge mr-2"></i> Profil Yayasan
               </a>
               <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
@@ -182,10 +183,10 @@
         <!-- Media & Informasi Dropdown -->
         <li>
           <div class="block">
-            <button id="mobileMediaBtn" class="flex items-center justify-between w-full py-2 text-[#40531B] font-medium">
+            <a href="<?= base_url('media-informasi') ?>" id="mobileMediaBtn" class="flex items-center justify-between w-full py-2 text-[#40531B] font-medium">
               Media & Informasi
               <i class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
-            </button>
+            </a>
             <div id="mobileMediaMenu" class="hidden bg-gray-100 rounded-md mt-1 py-1">
               <a href="#" class="block px-4 py-2 text-[#40531B] hover:bg-[#AFBC88] hover:text-white">
                 <i class="fas fa-newspaper mr-2"></i>Berita & Pengumuman
