@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\AdminModel;
 use App\Models\BeritaModel;
+use App\Models\GambarModel;
 use App\Models\MediaModel;
 
 class Home extends BaseController
@@ -103,15 +104,18 @@ class Home extends BaseController
         }
 
         $beritaModel = new BeritaModel();
-        $mediaModel = new MediaModel();
+        $gambarModel = new GambarModel();
+        $adminModel = new AdminModel();
+        $username = session()->get('username');
 
         $totalBerita = $beritaModel->countAll();
-        $totalMedia = $mediaModel->countAll();
+        $totalGambar = $gambarModel->countAll();
 
         return view('dashboard', [
             'title' => 'Dashboard Admin',
+            'username' => $username,
             'totalBerita' => $totalBerita,
-            'totalMedia' => $totalMedia
+            'totalMedia' => $totalGambar,
         ]);
     }
 
