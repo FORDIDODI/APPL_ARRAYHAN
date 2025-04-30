@@ -2,9 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Models\AdminModel;
 use App\Models\BeritaModel;
 use App\Models\MediaModel;
-use App\Models\UserModel;
 
 class Home extends BaseController
 {
@@ -83,10 +83,10 @@ class Home extends BaseController
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
-        $userModel = new UserModel();
-        $user = $userModel->where('username', $username)->first();
+        $adminModel = new AdminModel();
+        $admin = $adminModel->where('username', $username)->first();
 
-        if (!$user || $user['password'] !== $password) {
+        if (!$admin || $admin['password'] !== $password) {
             return redirect()->back()->with('error', 'Username atau password salah');
         }
 
